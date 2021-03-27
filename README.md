@@ -1,5 +1,4 @@
-# aqs-backend
+# Spring Boot Using Spring Data MongoDB Example
 
-Postman collection link ::
+This project depicts the Spring Boot Example with Spring Data MongoDB and REST Example.
 
-https://www.getpostman.com/collections/25aa54eef65f797cd268

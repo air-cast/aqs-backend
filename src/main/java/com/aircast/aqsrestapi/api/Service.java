@@ -20,7 +20,7 @@ public class Service {
 
     //to store device
     public Device setDevice(Device device) {
-        device.setCreatedAt(ZonedDateTime.now(ZoneOffset.UTC));
+        //device.setCreatedAt(ZonedDateTime.now(ZoneOffset.UTC));
         deviceRepository.save(device);
         return device;
     }
@@ -28,7 +28,7 @@ public class Service {
     //To store a data record for a particular parameter e.g. PM2.5
     public void setDataRecord(DataRecord datarecord) {
 
-        datarecord.setCreatedAt(ZonedDateTime.now(ZoneOffset.UTC));
+        //datarecord.setCreatedAt(ZonedDateTime.now(ZoneOffset.UTC));
         dataRecordRepository.save(datarecord);
     }
 }

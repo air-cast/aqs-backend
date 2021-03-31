@@ -1,10 +1,9 @@
 package com.aircast.aqsrestapi.device;
 
+import java.time.ZonedDateTime;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 
 @Document
 public class Device {

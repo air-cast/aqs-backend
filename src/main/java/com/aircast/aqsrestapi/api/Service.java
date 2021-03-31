@@ -4,10 +4,8 @@ import com.aircast.aqsrestapi.datarecord.DataRecord;
 import com.aircast.aqsrestapi.datarecord.DataRecordRepository;
 import com.aircast.aqsrestapi.device.Device;
 import com.aircast.aqsrestapi.device.DeviceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @org.springframework.stereotype.Service
 public class Service {

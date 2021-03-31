@@ -10,40 +10,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @org.springframework.stereotype.Controller
-@RequestMapping(value = {"/", "aqs"})
+@RequestMapping("/api")
 public class Controller {
     @Autowired
     Service service;
 
-    /////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////
-    ////////////////////POST REQUEST METHODS/////////////////////////
-    /////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////
-
-    //Register a new device
     @RequestMapping(value = {"/device"}, method = RequestMethod.POST)
     public @ResponseBody
     Response SetDevice(@RequestBody Device device) {
-
         Response response = new Response();
-
-//        if (service.deviceIdExist(device.getId()))
-//        {
-//            response.setResponse("DEVICE ID ALREADY EXIST");
-//        }
-//        else if (service.codeVersionNotExist(device.getCodeVersionId()))
-//        {
-//            response.setResponse("INVALID CODE VERSION");
-//        }
-//        else
-        {
-            service.setDevice(device);
-            response.setResponse("DEVICE REGISTERED");
-        }
+        service.setDevice(device);
+        response.setResponse("DEVICE REGISTERED");
         return response;
     }
 
@@ -53,16 +30,8 @@ public class Controller {
     public @ResponseBody
     Response SetDatarecord(@RequestBody DataRecord datarecord) {
         Response response = new Response();
-//        if (service.deviceIdNotExist(datarecord.getDeviceId()))
-//        {
-//            response.setResponse("DEVICE ID NOT EXIST");
-//        }
-//        else
-//        {
         service.setDataRecord(datarecord);
-        //service.updatePublicsiePartnerPreviousPm25Aqi(datarecord);
         response.setResponse("DATA SAVED");
-//        }
         return response;
     }
 }

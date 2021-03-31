@@ -4,13 +4,10 @@ import com.aircast.aqsrestapi.datarecord.DataRecord;
 import com.aircast.aqsrestapi.device.Device;
 import com.aircast.aqsrestapi.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-@org.springframework.stereotype.Controller
-@RequestMapping(value = {"/", "aqs"})
+@RestController
+@RequestMapping(value = {"/aqs"})
 public class Controller {
     @Autowired
     Service service;
@@ -49,7 +46,7 @@ public class Controller {
 
 
     //Add new packet records
-    @RequestMapping(value = {"device/datarecord"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/device/datarecord"}, method = RequestMethod.POST)
     public @ResponseBody
     Response SetDatarecord(@RequestBody DataRecord datarecord) {
         Response response = new Response();

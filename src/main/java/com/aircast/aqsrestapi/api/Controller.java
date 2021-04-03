@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = {"/aqs"})
+@RequestMapping(value = {"/api"})
 public class Controller {
     @Autowired
     Service service;
@@ -22,7 +22,7 @@ public class Controller {
     /////////////////////////////////////////////////////////////////
 
     //Register a new device
-    @RequestMapping(value = {"/device"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/devices"}, method = RequestMethod.POST)
     public @ResponseBody
     Response SetDevice(@RequestBody Device device) {
 
@@ -46,7 +46,7 @@ public class Controller {
 
 
     //Add new packet records
-    @RequestMapping(value = {"/device/datarecord"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/devices/datarecord"}, method = RequestMethod.POST)
     public @ResponseBody
     Response SetDatarecord(@RequestBody DataRecord datarecord) {
         Response response = new Response();

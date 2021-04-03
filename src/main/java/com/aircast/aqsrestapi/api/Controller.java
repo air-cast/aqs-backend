@@ -22,7 +22,7 @@ public class Controller {
     /////////////////////////////////////////////////////////////////
 
     //Register a new device
-    @RequestMapping(value = {"/devices"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/devices/{device-id}"}, method = RequestMethod.POST)
     public @ResponseBody
     Response SetDevice(@RequestBody Device device) {
 
@@ -46,7 +46,7 @@ public class Controller {
 
 
     //Add new packet records
-    @RequestMapping(value = {"/devices/datarecord"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/devices/{device-id}/datarecord"}, method = RequestMethod.POST)
     public @ResponseBody
     Response SetDatarecord(@RequestBody DataRecord datarecord) {
         Response response = new Response();

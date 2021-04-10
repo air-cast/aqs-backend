@@ -6,6 +6,9 @@ import com.aircast.aqsrestapi.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping(value = {"/api"})
 public class Controller {
@@ -62,4 +65,39 @@ public class Controller {
 //        }
         return response;
     }
+
+
+
+    /////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
+    ////////////////////GET REQUEST METHODS/////////////////////////
+    /////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
+
+//    @RequestMapping(value = {"/devices/{device-id}/datarecord"}, method = RequestMethod.GET)
+//    public @ResponseBody
+//    ArrayList<DataRecord> getDatarecord() {
+//
+//
+//
+//        return service.getDataRecord();;
+//    }
+
+    @RequestMapping(value = {"/devices/{device-id}/datarecord"}, method = RequestMethod.GET)
+    public @ResponseBody
+    List<DataRecord> getDataRecordOfDevice(@PathVariable("device-id") Long deviceId) {
+
+        return service.getDataRecordOfDevice(deviceId);
+    }
+
+    @RequestMapping(value = {"/devices"}, method = RequestMethod.GET)
+    public @ResponseBody
+    List<Device> getAllDevices() {
+
+        return service.getAllDevices();
+    }
+
 }

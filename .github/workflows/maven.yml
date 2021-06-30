@@ -23,7 +23,9 @@ jobs:
         distribution: 'adopt'
         
     - name: Disable Tests before build
-      run: mvn install -Dmaven.test.skip=true
+      run: |
+        mvn install -DskipTests
+        mvn install -Dmaven.test.skip=true
         
     - name: Build with Maven
       run: mvn -B package --file pom.xml

@@ -22,9 +22,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
       
-    - name: List items in Target directory
-      run: |
-        cd tagret
-        ls -a
+    - name: List items
+      run: ls -a
       
       

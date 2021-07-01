@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Step 1 ::Checkout tests branch
+    - name: Step 1 ::Checkout dev branch
       uses: actions/checkout@v2
       with:
         ref: dev
